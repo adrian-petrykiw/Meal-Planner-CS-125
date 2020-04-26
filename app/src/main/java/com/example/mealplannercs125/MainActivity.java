@@ -3,6 +3,8 @@ package com.example.mealplannercs125;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.skyhope.materialtagview.TagView;
+import com.skyhope.materialtagview.enums.TagSeparator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+        TagView tagView = findViewById(R.id.text_view_show_more);
+        tagView.addTagSeparator(TagSeparator.AT_SEPARATOR); // @ seprator
+        tagView.addTagSeparator(TagSeparator.AT_SEPARATOR); // @ seprator
+        String[] tagList = new String[]{"Hello1", "Hello2", "Hello3"};
+        tagView.setTagList(tagList);
     }
+    //     tagView.getSelectedTags();// that will return TagModel List
 
 }
